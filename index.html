@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MRes Guide to Reading Research Papers</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      height: 100vh;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      scroll-snap-align: start;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h1 {
+font-size: 10rem;
+margin-bottom: 2rem;
+}
+.section p, .section ul {
+ max-width: 80%; 
+margin: 0 auto;
+font-size: 6rem;
+line-height: 1.8;
+}
+    ul {
+      text-align: left;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <div>
+      <h1>An MRes Guide to Reading Research Papers</h1>
+      <p>To begin the course, we consider how to read a research paper. 
+        Later in the term, we will talk about how to write a research paper. 
+        This presupposes that you have a good reason to carefully read a research paper, such as if it is relevant to your own research, or perhaps later in your research career if you are asked to review it. 
+        We might also later discuss how to skim a paper, so that you can decide whether a paper is worth careful reading.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div>
+      <h1>Reading Goals</h1>
+      <p>When you read a research paper, your goal is to understand the scientific contributions the authors are making. 
+        This is not an easy task. 
+        It may require going over the paper several times. 
+        Expect to sometimes to even spend several hours to read a paper. 
+        Here are some initial guidelines for how to read a paper:
+</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div>
+      <h1>Read Critically</h1>
+      <p> 
+        Reading a research paper must be a critical process. 
+        You should not assume that the authors are always correct. 
+        Instead, be suspicious. Critical reading involves asking appropriate questions, such as (but not limited to):
+     </p>
+      <ul>
+        <li>If the authors attempt to solve a problem, are they solving the right problem?</li>
+        <li> Are there simple solutions the authors do not seem to have considered?</li>
+        <li>What are the limitations?</li>
+        <li>Are assumptions reasonable? Is the logic sound?</li>
+        <li>Did they gather and interpret data properly?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div>
+      <h1>Read Creatively</h1>
+      <p>Reading a paper critically is easier than creatively, in that it is always easier to tear something down than to build it up. 
+        Reading creatively involves harder, more positive thinking. .</p>
+      <ul>
+        <li>What are the good/interesting ideas in this paper?</li>
+        <li>Do these ideas have other applications or extensions that the authors might not have thought of? </li>
+        <li>Can they be generalised further?</li>
+        <li> Are there possible improvements that might make important practical differences? </li>
+        <li>If you continued this research, what’s next?</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div>
+      <h1>Make Notes As You Read</h1>
+      <p>Many people cover the margins of their copies of papers with notes, (depending on what medium you use, this may now be electronic). 
+        If you have questions or criticisms, write them down so you do not forget them. 
+        Underline key points the authors make. Mark the data that is most important or that appears questionable. 
+        Such efforts help the first time you read a paper and pay big dividends when you have to re-read a paper after several months. </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div>
+      <h1>After You Read Through, Summarise</h1>
+      <p>Almost all good research papers try to provide an answer to a specific question. 
+        (Sometimes the question is a natural one that people specifically set out to answer; sometimes a good idea just ends up answering a worthwhile question.) 
+        If you can succinctly describe a paper, you have probably recognised the question the authors started with and the answer they provide. 
+        Once you have focused on the main idea, you can go back and try to outline the paper to gain insight into more specific details. 
+        Indeed, if summarising the paper in one or two sentences is easy, go back and try to deepen your outline by summarising the three or four most important sub-points of the main idea.</p>
+    </div>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
